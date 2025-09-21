@@ -1,15 +1,33 @@
-rent_from_user=int(input("Enter your hostel/room rent= "))
+Our_Menu={
+    'Cold Coffe' : 120,
+    'Green Tea':60,
+    'Masala Chai':50,
+    'Cold Coffe with Ice Cream':150,
+    'Veg Sandwich':100
+}
 
-food=int(input("Enter the amount of your food= ")) 
 
-electricity_bill=int(input("Enter your electricity bill= ")) 
+print("---Welcome to Mr.chai---")
 
-charge_per_unit=int(input("Enter your charge per unit= "))
+print("1.Cold Coffe : 120\nGreen Tea: 60\nMasala Chai: 50\nCold Coffe with Ice Cream: 150\nVeg Sandwich: 100")
 
-persons=int(input("Enter the no.of persons living in hostel/room= "))
+Order_total=0
 
-total=electricity_bill* charge_per_unit
+Item1=input("Enter the your first  item = ")
 
-output=(food+rent_from_user+total) // persons
+if Item1 in Our_Menu:
+    Order_total+=Our_Menu[Item1]
+    print(f"Your item{Item1} has been added")
+else:
+    print(f"Order item {Item1}is not avaialble ")
 
-print(" Each person will play bill= ",output)
+Another_order_Item=input("Do you want to add another item?(Yes/No)")
+
+if Another_order_Item=="Yes":
+    Item2=input("Enter your second item=")
+    if Item2 in Our_Menu:
+        Order_total+=Our_Menu[Item2]
+        print(f"Your item as been added")
+    else:
+        print(f"Order item{Item2} is not avaliable")
+print(f"The total amount is {Order_total}")
